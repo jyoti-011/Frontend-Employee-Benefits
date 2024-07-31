@@ -135,7 +135,7 @@ nav a:active, nav a:focus, .tab-link.active {
 /* Styling for the sidebar */
 /* Sidebar */
 .sidebar {
-    width: 170px;
+    width: 250px;
     background-color: #f8f8f8;
     padding: 20px;
     border-right: 1px solid #ddd;
