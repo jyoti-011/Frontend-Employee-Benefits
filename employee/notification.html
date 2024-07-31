@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="notification.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="logo1.png" alt="company logo"></a>
+        </div>
+        <div class="company-name">
+            <h1>RewardWave Solutions</h1>
+        </div>
+        <div class="profile-pic">
+            <img src="profile-pic.png" alt="Profile Picture" id="profilePic">
+            <div class="dropdown" id="dropdownMenu">
+                <ul>
+                    <li><a href="change-password.html">Change Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html" class="tab-link">Dashboard</a></li>
+            <li><a href="benefit.html" class="tab-link">Benefit Programs</a></li>
+            <li><a href="performance.html" class="tab-link">Performance</a></li>
+            <li><a href="profile.html" class="tab-link">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="sidebar" style="height: auto;">
+            <div class="profile-info">
+                <img src="profile-pic.png" alt="Profile Picture" width="80">
+                <h2>Employee Name</h2>
+                <p>Department: IT<br>Software Engineer</p>
+            </div>
+            <ul>
+                <li><i class="fa-solid fa-bell"></i>&nbsp;&nbsp;  <a href="notification.html" data-page="notification.html">Notification</a></li>
+                <li><i class="fa-solid fa-bars"></i>&nbsp;&nbsp; <a href="recent-activity.html" data-page="recent-activity.html">Recent Activity</a></li>
+                <li><i class="fa-solid fa-bullhorn"></i>&nbsp;&nbsp; <a href="announcement.html" data-page="announcement.html">Announcements</a></li>
+                <li><i class="fa-solid fa-comment"></i>&nbsp;&nbsp; <a href="feedback.html" data-page="feedback.html">Feedback Section</a></li>
+                <li><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp; <a href="support.html" data-page="support.html">Support and Help</a></li>
+            </ul>
+        </div>        
+        <main class="main-content">
+            <h1>Notifications</h1>
+            <div class="notification-list">
+                <div class="notification">
+                    <h2>System Update</h2>
+                    <time>2024-07-09 10:00 AM</time>
+                    <p>The system will be down for maintenance on July 10th from 2:00 AM to 4:00 AM.</p>
+                </div>
+                <div class="notification">
+                    <h2>New Benefits Package</h2>
+                    <time>2024-07-08 09:30 AM</time>
+                    <p>We have updated our benefits package. Check out the benefits section for more details.</p>
+                </div>
+                <div class="notification">
+                    <h2>New Benefits Package</h2>
+                    <time>2024-07-08 09:30 AM</time>
+                    <p>We have updated our benefits package. Check out the benefits section for more details.</p>
+                </div>
+                <div class="notification">
+                    <h2>New Benefits Package</h2>
+                    <time>2024-07-08 09:30 AM</time>
+                    <p>We have updated our benefits package. Check out the benefits section for more details.</p>
+                </div>
+                <div class="notification">
+                    <h2>New Benefits Package</h2>
+                    <time>2024-07-08 09:30 AM</time>
+                    <p>We have updated our benefits package. Check out the benefits section for more details.</p>
+                </div>
+                <!-- More notifications can be added here -->
+            </div>
+            <div class="all-caught-up">
+                <!-- <img src="all-caught-up.png" alt="All caught up"> -->
+                <p>You're all caught up!</p>
+                <small>Come back later for new notifications.</small>
+            </div>
+        </main>
+    </div>
+    <script>
+       document.addEventListener('DOMContentLoaded', () => {
+            const notifications = document.querySelectorAll('.notification');
+            const notificationList = document.querySelector('.notification-list');
+            const allCaughtUp = document.querySelector('.all-caught-up');
+
+            function markAsRead(event) {
+                const notification = event.currentTarget;
+                notification.classList.add('read');
+                notification.querySelector('.mark-read-btn').style.display = 'none';
+                checkAllRead();
+            }
+
+            function checkAllRead() {
+                const unreadNotifications = document.querySelectorAll('.notification:not(.read)');
+                if (unreadNotifications.length === 0) {
+                    notificationList.style.display = 'none';
+                    allCaughtUp.style.display = 'block';
+                }
+            }
+
+            notifications.forEach(notification => {
+                const markReadBtn = document.createElement('button');
+                markReadBtn.textContent = 'Mark as Read';
+                markReadBtn.classList.add('mark-read-btn');
+                notification.appendChild(markReadBtn);
+                markReadBtn.addEventListener('click', markAsRead);
+            });
+
+            checkAllRead();
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const profilePic = document.getElementById('profilePic');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    profilePic.addEventListener('click', function() {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide dropdown menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!profilePic.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+    </script>
+</body>
+</html>

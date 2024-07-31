@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <title>Benefit Programs</title>
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"> <img src="logo1.png" alt="company logo"></a>
+        </div>
+        <div class="company-name">
+            <h1>RewardWave Solutions</h1>
+        </div>
+        <div class="profile-pic">
+            <img src="profile-pic.png" alt="Profile Picture" id="profilePic">
+            <div class="dropdown" id="dropdownMenu">
+                <ul>
+                    <li><a href="change-password.html">Change Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html" class="tab-link">Dashboard</a></li>
+            <li><a href="benefit.html" class="tab-link active">Benefit Programs</a></li>
+            <li><a href="performance.html" class="tab-link">Performance</a></li>
+            <li><a href="profile.html" class="tab-link">Profile</a></li>
+        </ul>
+    </nav>
+    <div class="main-content">
+        <div class="content">
+            <div class="benefit-programs-container">
+                <div class="benefit-card">
+                    <img src="health-insurance.png" alt="Health Insurance">
+                    <h3>Health Insurance</h3>
+                    <p>Comprehensive medical, dental, and vision coverage.</p>
+                    <button onclick="redirectToHealthInsurance()">Details</button>
+                    <button onclick="redirectToEnrollHealth()">Enroll</button>
+                </div>
+                <div class="benefit-card">
+                    <img src="gym.png" alt="Gym Membership">
+                    <h3>Gym Membership</h3>
+                    <p>Access to partnered fitness centers and gyms.</p>
+                    <button onclick="redirectToGym()">Details</button>
+                    <button onclick="redirectToEnrollGym()">Enroll</button>
+                </div>
+                <div class="benefit-card">
+                    <img src="therapy-counselling.png" alt="Therapy and Counselling">
+                    <h3>Therapy and Counselling</h3>
+                    <p>Confidential therapy and counselling services.</p>
+                    <button onclick="redirectToTherapy()">Details</button>
+                    <button onclick="redirectToEnrollTherapy()">Enroll</button>
+                </div>
+                <div class="benefit-card">
+                    <img src="performance-bonus.png" alt="Performance Bonuses">
+                    <h3>Performance Bonuses</h3>
+                    <p>Bonuses based on performance metrics.</p>
+                    <button onclick="redirectToPerformanceBonus()">Details</button>
+                    <button onclick="redirectToEnrollPerformanceBonus()">Enroll</button>
+                </div>
+                <div class="benefit-card">
+                    <img src="housing-assistance.png" alt="Housing Assistance">
+                    <h3>Housing Assistance</h3>
+                    <p>Relocation packages and housing stipends.</p>
+                    <button onclick="redirectToHousing()">Details</button>
+                    <button onclick="redirectToEnrollHousing()">Request</button>
+                </div>
+                <div class="benefit-card">
+                    <img src="work-life-balance.png" alt="Work Life Balance">
+                    <h3>Work Life Balance</h3>
+                    <p>Flexible work options (Work from home) and parental leaves.</p>
+                    <button onclick="redirectToWorkLifeBalance()">Details</button>
+                    <button onclick="redirectToEnrollWork()">Request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function redirectToHealthInsurance() {
+            window.location.href = "health-insurance.html";
+        }
+        function redirectToEnrollHealth() {
+            window.location.href = "enroll-health.html";
+        }
+        function redirectToGym() {
+            window.location.href = "gym-membership.html";
+        }
+        function redirectToEnrollGym() {
+            window.location.href = "enroll-gym.html";
+        }
+        function redirectToTherapy() {
+            window.location.href = "therapy.html";
+        }
+        function redirectToEnrollTherapy() {
+            window.location.href = "enroll-therapy.html";
+        }
+        function redirectToPerformanceBonus() {
+            window.location.href = "performance-bonus.html";
+        }
+        function redirectToEnrollPerformanceBonus() {
+            window.location.href = "enroll-bonus.html";
+        }
+        function redirectToHousing() {
+            window.location.href = "housing.html";
+        }
+        function redirectToEnrollHousing() {
+            window.location.href = "request-housing.html";
+        }
+        function redirectToWorkLifeBalance() {
+            window.location.href = "work.html";
+        }
+        function redirectToEnrollWork() {
+            window.location.href = "request-work.html";
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+    const profilePic = document.getElementById('profilePic');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    profilePic.addEventListener('click', function() {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide dropdown menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!profilePic.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

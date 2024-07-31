@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Activity</title>
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="recent-activity.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"> <img src="logo1.png" alt="company logo"></a>
+        </div>
+        <div class="company-name">
+            <h1>RewardWave Solutions</h1>
+        </div>
+        <div class="profile-pic">
+            <img src="profile-pic.png" alt="Profile Picture" id="profilePic">
+            <div class="dropdown" id="dropdownMenu">
+                <ul>
+                    <li><a href="change-password.html">Change Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html" class="tab-link">Dashboard</a></li>
+            <li><a href="benefit.html" class="tab-link">Benefit Programs</a></li>
+            <li><a href="performance.html" class="tab-link">Performance</a></li>
+            <li><a href="profile.html" class="tab-link">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="sidebar" style="height: auto;">
+            <div class="profile-info">
+                <img src="profile-pic.png" alt="Profile Picture" width="80">
+                <h2>Employee Name</h2>
+                <p>Department: IT<br>Software Engineer</p>
+            </div>
+            <ul>
+                <li><i class="fa-solid fa-bell"></i>&nbsp;&nbsp;  <a href="notification.html" data-page="notification.html">Notification</a></li>
+                <li><i class="fa-solid fa-bars"></i>&nbsp;&nbsp; <a href="recent-activity.html" data-page="recent-activity.html">Recent Activity</a></li>
+                <li><i class="fa-solid fa-bullhorn"></i>&nbsp;&nbsp; <a href="announcement.html" data-page="announcement.html">Announcements</a></li>
+                <li><i class="fa-solid fa-comment"></i>&nbsp;&nbsp; <a href="feedback.html" data-page="feedback.html">Feedback Section</a></li>
+                <li><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp; <a href="support.html" data-page="support.html">Support and Help</a></li>
+            </ul>
+        </div>
+        <main class="main-content">
+            <h1>Recent Activity</h1>
+            <div class="activity-list">
+                <div class="activity">
+                    <h2>Project XYZ Completion</h2>
+                    <time>2024-07-05 03:00 PM</time>
+                    <p>Project XYZ has been successfully completed and deployed. Kudos to the team!</p>
+                </div>
+                <div class="activity">
+                    <h2>Code Review</h2>
+                    <time>2024-07-03 11:00 AM</time>
+                    <p>The code review for the new module was conducted. Feedback has been shared with the team.</p>
+                </div>
+                <div class="activity">
+                    <h2>Code Review</h2>
+                    <time>2024-07-03 11:00 AM</time>
+                    <p>The code review for the new module was conducted. Feedback has been shared with the team.</p>
+                </div>
+                <!-- More activities can be added here -->
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const profilePic = document.getElementById('profilePic');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    profilePic.addEventListener('click', function() {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide dropdown menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!profilePic.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy and Counseling Benefit Detail Page</title>
+    <link rel="stylesheet" href="therapy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"> <img src="logo1.png" alt="company logo"></a>
+        </div>
+        <div class="company-name">
+            <h1>RewardWave Solutions</h1>
+        </div>
+        <div class="profile-pic">
+            <img src="profile-pic.png" alt="Profile Picture" id="profilePic">
+            <div class="dropdown" id="dropdownMenu">
+                <ul>
+                    <li><a href="change-password.html">Change Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>  
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="benefit.html" class="active">Benefit Programs</a></li>
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+    <div class="breadcrumb">
+        <a href="dashboard.html">DASHBOARD</a> <i class="fa-solid fa-greater-than"></i> <a href="benefit.html">BENEFIT PROGRAMS</a> <i class="fa-solid fa-greater-than"></i> <a href="therapy.html">THERAPY AND COUNSELING</a> <i class="fa-solid fa-greater-than"></i> <a href="#">DETAILS</a>
+    </div>
+    <div class="content">
+        <div class="details-container">
+            <h1>Therapy and Counseling Benefit</h1>
+            <div class="images">
+                <img src="therapy2.png" alt="Therapy and Counseling Detail Image 1" class="detail-image">
+                <!-- <img src="therapy2.png" alt="Therapy and Counseling Detail Image 2" class="detail-image"> -->
+            </div>
+            <div class="specifications">
+                <h2>Specifications</h2>
+                <p>Session Duration: 30 minutes, 1 hour</p>
+                <p>Therapy Type: Individual, Family, Group</p>
+                <p>Available Therapists: Licensed counselors and therapists</p>
+                <p>Online and In-person: Both options available</p>
+                <p>Special Programs: Stress management, anxiety reduction, etc.</p>
+                <p>Confidentiality: Strictly maintained</p>
+            </div>
+            <div class="types">
+                <h2>Types of Counseling</h2>
+                <p>Individual Therapy: One-on-one sessions</p>
+                <p>Family Therapy: Sessions for family members</p>
+                <p>Group Therapy: Group sessions with similar concerns</p>
+            </div>
+            <div class="benefits">
+                <h2>Benefits of Counseling</h2>
+                <p>Mental Health Improvement: Better mental health and well-being</p>
+                <p>Stress Reduction: Effective strategies to manage stress</p>
+                <p>Enhanced Relationships: Improved interpersonal relationships</p>
+                <p>Personal Growth: Personal development and growth</p>
+            </div>
+            <div class="how-to">
+                <h2>How to Enroll in Counseling</h2>
+                <p>Fill in Your Details: Complete a simple form with your personal and contact details</p>
+                <p>Choose a Counselor: Select a therapist from our list of professionals</p>
+                <p>Schedule a Session: Book a convenient time for your session</p>
+                <p>Get Confirmation: Receive a confirmation email with session details</p>
+            </div>
+            <div class="providers">
+                <h2>Therapy Providers</h2>
+                <p>BetterHelp: Online counseling with licensed therapists</p>
+                <p>Talkspace: Affordable therapy sessions</p>
+                <p>Local Therapists: In-person sessions with licensed professionals</p>
+            </div>
+            <div class="riders">
+                <h2>Counseling Riders</h2>
+                <p>Additional Sessions: Extra therapy sessions</p>
+                <p>Special Programs: Access to special therapy programs</p>
+            </div>
+            <div class="tips">
+                <h2>Therapy Tips</h2>
+                <p>Be Open: Share your thoughts and feelings openly</p>
+                <p>Stay Consistent: Regular sessions lead to better outcomes</p>
+                <p>Follow Guidance: Adhere to your therapist's advice</p>
+                <p>Practice Self-Care: Take care of yourself between sessions</p>
+            </div>
+            <button class="enroll-now" onclick="redirectToEnroll()">ENROLL NOW</button>
+        </div>
+    </div>
+    <script>
+        function redirectToEnroll() {
+            window.location.href = "enroll-therapy.html";
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+    const profilePic = document.getElementById('profilePic');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    profilePic.addEventListener('click', function() {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide dropdown menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!profilePic.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+    </script>
+</body>
+</html>

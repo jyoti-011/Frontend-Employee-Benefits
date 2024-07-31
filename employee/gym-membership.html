@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Detail Page</title>
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="gym-membership.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"> <img src="logo1.png" alt="company logo"></a>
+        </div>
+        <div class="company-name">
+            <h1>RewardWave Solutions</h1>
+        </div>
+        <div class="profile-pic">
+            <img src="profile-pic.png" alt="Profile Picture" id="profilePic">
+            <div class="dropdown" id="dropdownMenu">
+                <ul>
+                    <li><a href="change-password.html">Change Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>  
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="benefit.html" class="active">Benefit Programs</a></li>
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+    <div class="breadcrumb">
+        <a href="dashboard.html">DASHBOARD</a> <i class="fa-solid fa-greater-than"></i> <a href="benefit.html">BENEFIT PROGRAMS</a> <i class="fa-solid fa-greater-than"></i> <a href="gym-membership.html">GYM MEMBERSHIP</a> <i class="fa-solid fa-greater-than"></i> <a href="#">DETAILS</a>
+    </div>
+    <div class="content">
+        <div class="details-container">
+            <h1>Gym Membership</h1>
+            <div class="images">
+                <img src="gym1.png" alt="Gym Membership Detail Image 1" class="detail-image">
+                <!-- <img src="gym2.png" alt="Gym Membership Detail Image 2" class="detail-image"> -->
+            </div>
+            <div class="specifications">
+                <h2>Specifications</h2>
+                <p>Membership Duration: Monthly, Quarterly, Yearly</p>
+                <p>Membership Type: Individual, Family, Corporate</p>
+                <p>Gym Access: Unlimited during operational hours</p>
+                <p>Personal Training Sessions: Up to 10 sessions per month</p>
+                <p>Group Classes: Yoga, Pilates, Zumba, etc.</p>
+                <p>Swimming Pool Access: Covered</p>
+                <p>Spa and Sauna Access: Limited to 4 sessions per month</p>
+                <p>Diet and Nutrition Plans: Available</p>
+                <p>Health Check-ups: Annual basic health check-up</p>
+                <p>Exclusive Discounts: On sports apparel and equipment</p>
+            </div>
+            <div class="types">
+                <h2>Types of Membership</h2>
+                <p>Individual Plan: Designed for individuals</p>
+                <p>Family Plan: Designed for families</p>
+                <p>Corporate Plan: Designed for employees of a corporation</p>
+            </div>
+            <div class="benefits">
+                <h2>Benefits of Gym Membership</h2>
+                <p>Access to All Facilities: Use of all gym facilities during operational hours</p>
+                <p>Health and Fitness Programs: Customized workout plans and fitness programs</p>
+                <p>Wellness Workshops: Regular workshops on fitness, nutrition, and wellness</p>
+                <p>Flexible Timings: Flexible gym timings to suit your schedule</p>
+            </div>
+            <div class="how-to">
+                <h2>How to Enroll in Gym Membership</h2>
+                <p>Fill in Your Details: Complete a simple form with your personal and contact details</p>
+                <p>Choose a Plan: Compare different membership plans and their benefits</p>
+                <p>Submit Application: Submit the application and make the necessary payment</p>
+                <p>Get Approval: Get instant approval and start enjoying the gym membership benefits</p>
+            </div>
+            <div class="providers">
+                <h2>Gym Membership Providers</h2>
+                <p>Gold’s Gym: Offers a range of membership plans, including individual and family plans</p>
+                <p>Planet Fitness: Known for its affordable and flexible gym membership plans</p>
+                <p>Anytime Fitness: Provides 24/7 access to all its facilities with flexible membership options</p>
+            </div>
+            <div class="riders">
+                <h2>Gym Membership Riders</h2>
+                <p>Personal Training Rider: Additional personal training sessions</p>
+                <p>Spa and Wellness Rider: Extra spa and sauna sessions</p>
+            </div>
+            <div class="tips">
+                <h2>Gym Membership Tips</h2>
+                <p>Start Slow: Begin with moderate workouts to avoid injuries</p>
+                <p>Stay Consistent: Regular gym visits lead to better results</p>
+                <p>Follow Guidance: Adhere to trainers' advice for safe and effective workouts</p>
+                <p>Stay Hydrated: Keep yourself hydrated before, during, and after workouts</p>
+            </div>
+            <button class="enroll-now" onclick="redirectToEnroll()">ENROLL NOW</button>
+        </div>
+    </div>
+    <script>
+        function redirectToEnroll() {
+            window.location.href = "enroll-gym.html";
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+    const profilePic = document.getElementById('profilePic');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    profilePic.addEventListener('click', function() {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide dropdown menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!profilePic.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+    </script>
+</body>
+</html>

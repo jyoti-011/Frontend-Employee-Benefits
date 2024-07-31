@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <title>Dashboard</title>
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="logo1.png" alt="company logo"></a>
+        </div>
+        <div class="company-name">
+            <h1>RewardWave Solutions</h1>
+        </div>
+        <div class="profile-pic">
+            <img src="profile-pic.png" alt="Profile Picture" id="profilePic">
+            <div class="dropdown" id="dropdownMenu">
+                <ul>
+                    <li><a href="change-password.html">Change Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html" class="tab-link active">Dashboard</a></li>
+            <li><a href="benefit.html" class="tab-link">Benefit Programs</a></li>
+            <li><a href="performance.html" class="tab-link">Performance</a></li>
+            <li><a href="profile.html" class="tab-link">Profile</a></li>
+        </ul>
+    </nav>
+    <div class="main-content">
+        <div class="sidebar" style="height: auto;">
+            <div class="profile-info">
+                <img src="profile-pic.png" alt="Profile Picture" width="80">
+                <h2>Aster Seawalker</h2>
+                <p>Department: IT<br>Software Engineer</p>
+            </div>
+            <ul>
+                <li><i class="fa-solid fa-bell"></i>&nbsp;&nbsp;<a href="notification.html" data-page="notification.html">Notification</a></li>
+                <li><i class="fa-solid fa-bars"></i>&nbsp;&nbsp;<a href="recent-activity.html" data-page="recent-activity.html">Recent Activity</a></li>
+                <li><i class="fa-solid fa-bullhorn"></i>&nbsp;&nbsp;<a href="announcement.html" data-page="announcement.html">Announcements</a></li>
+                <li><i class="fa-solid fa-comment"></i>&nbsp;&nbsp;<a href="feedback.html" data-page="feedback.html">Feedback Section</a></li>
+                <li><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;<a href="support.html" data-page="support.html">Support and Help</a></li>
+            </ul>
+        </div>        
+        <div class="content">
+            <div class="card">
+                <h2>WELCOME, Aster Seawalker!!</h2>
+                <p>Discover, manage, and maximize your benefits with ease. Your well-being is our priority. Thank you for being with us!</p>
+            </div>
+            <section class="achievements">
+                <h3>Achievements</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-award"></i>
+                        <div class="achievement-details">
+                            <p><strong>Employee of the month</strong></p>
+                            <span class="achievement-badge">3x</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-microphone"></i>
+                        <div class="achievement-details">
+                            <p>Hosted a <strong>tech seminar</strong> for freshers</p>
+                            <span class="achievement-badge">1x</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-chart-line"></i>
+                        <div class="achievement-details">
+                            <p>Achieved <strong>120%</strong> of targets in a span of two years</p>
+                            <span class="achievement-badge">120%</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.nav a');
+            const mainContent = document.getElementById('main-content');
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const page = link.getAttribute('data-page');
+                    fetch(page)
+                        .then(response => response.text())
+                        .then(data => {
+                            mainContent.innerHTML = data;
+                        })
+                        .catch(error => console.error('Error loading page:', error));
+                });
+            });
+            // Load the dashboard by default
+            fetch('dashboard.html')
+                .then(response => response.text())
+                .then(data => {
+                    mainContent.innerHTML = data;
+                })
+                .catch(error => console.error('Error loading page:', error));
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const profilePic = document.getElementById('profilePic');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    profilePic.addEventListener('click', function() {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide dropdown menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!profilePic.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+    </script>
+</body>
+</html>

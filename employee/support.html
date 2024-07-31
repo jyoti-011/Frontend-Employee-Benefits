@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support and Help</title>
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="support.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"> <img src="logo1.png" alt="company logo"></a>
+        </div>
+        <div class="company-name">
+            <h1>RewardWave Solutions</h1>
+        </div>
+        <div class="profile-pic">
+            <img src="profile-pic.png" alt="Profile Picture" id="profilePic">
+            <div class="dropdown" id="dropdownMenu">
+                <ul>
+                    <li><a href="change-password.html">Change Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html" class="tab-link">Dashboard</a></li>
+            <li><a href="benefit.html" class="tab-link">Benefit Programs</a></li>
+            <li><a href="performance.html" class="tab-link">Performance</a></li>
+            <li><a href="profile.html" class="tab-link">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="sidebar" style="height: auto;">
+            <div class="profile-info">
+                <img src="profile-pic.png" alt="Profile Picture" width="80">
+                <h2>Employee Name</h2>
+                <p>Department: IT<br>Software Engineer</p>
+            </div>
+            <ul>
+                <li><i class="fa-solid fa-bell"></i>&nbsp;&nbsp;  <a href="notification.html" data-page="notification.html">Notification</a></li>
+                <li><i class="fa-solid fa-bars"></i>&nbsp;&nbsp; <a href="recent-activity.html" data-page="recent-activity.html">Recent Activity</a></li>
+                <li><i class="fa-solid fa-bullhorn"></i>&nbsp;&nbsp; <a href="announcement.html" data-page="announcement.html">Announcements</a></li>
+                <li><i class="fa-solid fa-comment"></i>&nbsp;&nbsp; <a href="feedback.html" data-page="feedback.html">Feedback Section</a></li>
+                <li><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp; <a href="support.html" data-page="support.html">Support and Help</a></li>
+            </ul>
+        </div>
+        <main class="main-content">
+            <h1>Support and Help</h1>
+            <div class="support-list">
+                <div class="support">
+                    <h2>Technical Support</h2>
+                    <p>If you are experiencing technical issues, please contact our technical support team at <a href="mailto:support@rewardwavesolutions.com">support@rewardwavesolutions.com</a>.</p>
+                </div>
+                <div class="support">
+                    <h2>HR Support</h2>
+                    <p>For any HR-related queries, please reach out to the HR team at <a href="mailto:hr@rewardwavesolutions.com">hr@rewardwavesolutions.com</a>.</p>
+                </div>
+                <div class="support">
+                    <h2>General Inquiries</h2>
+                    <p>For any other inquiries, feel free to email us at <a href="mailto:info@rewardwavesolutions.com">info@rewardwavesolutions.com</a>.</p>
+                </div>
+                <!-- More support items can be added here -->
+            </div>
+            <div class="support-form">
+                <h2>Contact Support</h2>
+                <form id="supportForm">
+                    <label for="support-title">Subject:</label>
+                    <input type="text" id="support-title" name="support_title" required>
+                    
+                    <label for="support-message">Message:</label>
+                    <textarea id="support-message" name="support_message" rows="4" required></textarea>
+                    
+                    <label for="support-date">Date:</label>
+                    <input type="date" id="support-date" name="support_date">
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const supportForm = document.getElementById('supportForm');
+            const supportList = document.querySelector('.support-list');
+
+            supportForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Collect the form data
+                const title = document.getElementById('support-title').value;
+                const message = document.getElementById('support-message').value;
+                const date = document.getElementById('support-date').value;
+
+                // Simple form validation
+                if (title && message) {
+                    // Create a new support item element
+                    const supportItem = document.createElement('div');
+                    supportItem.className = 'support';
+                    supportItem.innerHTML = `
+                        <h2>${title}</h2>
+                        <p>${message}</p>
+                        <time datetime="${date}">${date ? new Date(date).toLocaleDateString() : ''}</time>
+                    `;
+
+                    // Append the new support item to the support list
+                    // supportList.appendChild(supportItem);
+
+                    // Clear the form
+                    supportForm.reset();
+
+                    alert('Support request submitted successfully!');
+                } else {
+                    alert('Please fill in all the required fields.');
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const profilePic = document.getElementById('profilePic');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    profilePic.addEventListener('click', function() {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide dropdown menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!profilePic.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance Enrollment Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="enroll-health.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"> <img src="logo1.png" alt="company logo"></a>
+        </div>
+        <div class="company-name">
+            <h1>RewardWave Solutions</h1>
+        </div>
+        <div class="profile-pic">
+            <img src="profile-pic.png" alt="Profile Picture" id="profilePic">
+            <div class="dropdown" id="dropdownMenu">
+                <ul>
+                    <li><a href="change-password.html">Change Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="benefit.html" class="active">Benefit Programs</a></li>
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+    <div class="breadcrumb">
+        <a href="dashboard.html">DASHBOARD</a> <i class="fa-solid fa-greater-than"></i><a href="benefit.html">BENEFIT PROGRAMS</a> <i class="fa-solid fa-greater-than"></i> <a href="health-insurance.html">HEALTH INSURANCE</a> <i class="fa-solid fa-greater-than"></i> <a href="#">ENROLL</a>
+    </div>
+    <div class="content">
+        <form class="enrollment-form" onsubmit="redirectToEnrollSuccess(event)">
+            <h1>HEALTH INSURANCE ENROLLMENT FORM</h1>
+            <section>
+                <h2>SECTION 1: PERSONAL INFORMATION</h2>
+                <label for="name">NAME:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="dob">D.O.B. (Date of Birth):</label>
+                <input type="date" id="dob" name="dob" required>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </section>
+            <section>
+                <h2>SECTION 2: HEALTH INSURANCE INFORMATION</h2>
+                <label>Types of Insurance: (Check one)</label>
+                <div class="radio-group" required>
+                    <label><input type="radio" id="employer-sponsored" name="insurance-type" value="employer-sponsored" required> Employer-sponsored</label>
+                    <label><input type="radio" id="individual-plan" name="insurance-type" value="individual-plan"> Individual plan</label>
+                    <label><input type="radio" id="other" name="insurance-type" value="other"> Other (please specify):</label>
+                    <input type="text" id="other-specify" name="other-specify">
+                </div>
+                <label for="insurance-provider">Insurance Provider:</label>
+                <input type="text" id="insurance-provider" name="insurance-provider" required>
+                <label for="policy-number">Policy Number:</label>
+                <input type="number" id="policy-number" name="policy-number" maxlength="10" required>
+            </section>
+            <section>
+                <h2>SECTION 3: INCOME INFORMATION</h2>
+                <label for="income">Annual Household Income:</label>
+                <input type="number" id="income" name="income" required>
+                <label for="dependents">Number of Dependents:</label>
+                <input type="number" id="dependents" name="dependents" required>
+                <label>Employee Status:</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="full-time" name="employee-status" value="full-time" required> Full-time</label>
+                    <label><input type="radio" id="part-time" name="employee-status" value="part-time"> Part-time</label>
+                    <label><input type="radio" id="other-status" name="employee-status" value="other-status"> Other (please specify):</label>
+                    <input type="text" id="other-status-specify" name="other-status-specify">
+                </div>
+            </section>
+            <section>
+                <h2>SECTION 4: ADDITIONAL INFORMATION</h2>
+                <label for="disabilities">Do you have disabilities or impairments? (Yes/No):</label>
+                <input type="text" id="disabilities" name="disabilities" required>
+                <label for="previous-coverage">Have you had health insurance coverage in the past 12 months? (Yes/No):</label>
+                <input type="text" id="previous-coverage" name="previous-coverage" required>
+                <div id="previous-coverage-details">
+                    <label>If yes, please provide the following information:</label>
+                    <label for="previous-insurance-provider">Insurance Provider:</label>
+                    <input type="text" id="previous-insurance-provider" name="previous-insurance-provider">
+                    <label for="previous-policy-number">Policy Number:</label>
+                    <input type="text" id="previous-policy-number" name="previous-policy-number">
+                    <label for="effective-date">Effective Date:</label>
+                    <input type="date" id="effective-date" name="effective-date">
+                    <label for="expiration-date">Expiration Date:</label>
+                    <input type="date" id="expiration-date" name="expiration-date">
+                </div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="authorization" name="authorization" required> I authorize the release of my personal and health insurance information to verify my eligibility for health insurance benefits.</label>
+                    <label><input type="checkbox" id="understanding" name="understanding" required> I understand that this information will be used to determine my eligibility for health insurance benefits and to process any claims that may be submitted.</label>
+                </div>
+            </section>
+            <button type="submit" class="enroll-button">ENROLL</button>
+        </form>
+    </div>
+    <script>
+        function redirectToEnrollSuccess(event) {
+            event.preventDefault();
+
+            // Check if the required checkboxes are checked
+            const authorizationChecked = document.getElementById('authorization').checked;
+            const understandingChecked = document.getElementById('understanding').checked;
+
+            // Check if the form is valid
+            const form = document.querySelector('.enrollment-form');
+            if (form.checkValidity() && authorizationChecked && understandingChecked) {
+                window.location.href = "enroll-success.html";
+            } else {
+                alert('Please fill in all required fields and check all required checkboxes.');
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+    const profilePic = document.getElementById('profilePic');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    profilePic.addEventListener('click', function() {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide dropdown menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!profilePic.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+    </script>
+</body>
+</html>

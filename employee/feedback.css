@@ -1,0 +1,288 @@
+/* Reset some default styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Background */
+body {
+    background-color: #f4c842;
+}
+
+/* Styling for the header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px; /* Decrease padding to reduce height */
+    background-color: #ffffff;
+    height: 45px;
+}
+header .company-name {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    transition: color 0.3s, transform 0.3s;
+}
+header .company-name:hover {
+    cursor: pointer;
+    color: #005bb5;
+    transform: scale(1.05);
+}
+header .logo img {
+    height: 40px;
+    transition: color 0.3s, transform 0.3s;
+}
+header .logo img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+header .profile-pic img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+header .profile-pic img:hover {
+    transform: scale(1.1);
+}
+
+/* Dropdown Menu */
+header .dropdown {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50px; /* Adjust according to your needs */
+    right: 20px;
+    background-color: #d7d6d6;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+header .dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header .dropdown ul li {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+header .dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+header .dropdown ul li a {
+    color: #5d4037; /* Dark brown */
+    text-decoration: none;
+}
+
+header .dropdown ul li a:hover {
+    color: #f57c00; /* Orange */
+}
+/* Styling for the navbar */
+nav {
+    background-color: #2c5c67;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 18px;
+}
+
+nav a:hover {
+    background-color: #69a7b4;
+    color: #ffffff;
+}
+
+nav a:active, nav a:focus, .tab-link.active {
+    background-color: rgb(0, 123, 255);
+    color: #ffffff;
+    border-radius: 20px ;
+}
+
+/* Content Layout */
+.content {
+    display: flex;
+}
+
+/* Sidebar */
+/* Sidebar */
+.sidebar {
+    width: 170px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    position: sticky;
+    top: 45px;
+    height: calc(100vh - 45px);
+}
+.sidebar .profile-info {
+    text-align: center;
+}
+.sidebar .profile-info img {
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.sidebar .profile-info img:hover {
+    transform: scale(1.1);
+}
+.sidebar .profile-info h2 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+.sidebar .profile-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+.sidebar ul {
+    padding: 20px 0;
+}
+.sidebar li {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    transition: color 0.3s, transform 0.3s;
+}
+.sidebar li:hover {
+    cursor: pointer;
+    color: #005bb5;
+    transform: scale(1.05);
+}
+.sidebar li i {
+    margin-right: 10px;
+}
+.sidebar li img {
+    height: 20px;
+    margin-right: 10px;
+}
+.sidebar li:hover img {
+    filter: brightness(0.7);
+}
+
+/* Make sidebar link text black */
+.sidebar a {
+    color: black;
+    text-decoration: none; /* Remove underline from the links */
+}
+
+.sidebar a:hover {
+    color: #005bb5; /* Maintain the hover color if needed */
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedback-list {
+    /* background-color: #fff; */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feedback {
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+.feedback:hover {
+    transform: scale(1.02);
+}
+
+.feedback h2 {
+    margin: 0 0 10px;
+}
+
+.feedback time {
+    display: block;
+    margin-bottom: 10px;
+    color: #888;
+}
+
+.feedback p {
+    margin: 0;
+}
+
+.feedback-form {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 80%; /* Adjust the width as needed */
+    max-width: 600px; /* Add a max-width to prevent it from getting too wide */
+    margin-left: auto; /* Center align */
+    margin-right: auto; /* Center align */
+}
+
+.feedback-form h2 {
+    margin-bottom: 20px;
+}
+
+.feedback-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.feedback-form input[type="text"],
+.feedback-form textarea,
+.feedback-form input[type="date"] {
+    width: 97%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.feedback-form button {
+    padding: 10px 20px;
+    background-color: #2c5c67;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.feedback-form button:hover {
+    background-color: #007bff;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="logo1.png" alt="Logo">
+            </div>
+            <div class="company-name">
+                <h1>RewardWave Solutions</h1>
+            </div>
+            <button class="login" onclick="redirectToLogin()">LOGIN</button>
+        </header>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="heading-content">
+                <h1>Excellent IT Services for your success</h1>
+            </div>
+        </main>
+        <div class="parterns-info">
+            <h3>Some of our prominent partners</h3>
+            <div class="partners-wrapper">
+                <div class="partner">
+                    <img src="index-partner1.jpg" alt="Partner">
+                </div>
+                <div class="partner">
+                    <img src="index-partner2.jpeg" alt="Partner">
+                </div>
+                <div class="partner">
+                    <img src="index-partner3.jpg" alt="Partner">
+                </div>
+                <div class="partner">
+                    <img src="index-partner4.jpg" alt="Partner">
+                </div>
+            </div>
+        </div>
+        <div class="employee-benefits">
+            <h3>What's for our employees</h3>
+            <div class="employee-benefits-wrapper">
+                <div class="benefit">
+                    <div class="benefit-img">
+                        <img src="health-insurance.png" alt="Health Insurance">
+                    </div>
+                    <div class="benefit-desc">
+                        <p>Comprehensive medical, dental, and vision coverage.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-img">
+                        <img src="therapy-counselling.png" alt="Therapy">
+                    </div>
+                    <div class="benefit-desc">
+                        <p>Confidential therapy and counselling services.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-img">
+                        <img src="gym.png" alt="Gym">
+                    </div>
+                    <div class="benefit-desc">
+                        <p>Access to partnered fitness centers and gyms.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-img">
+                        <img src="performance-bonus.png" alt="Performance Bonus">
+                    </div>
+                    <div class="benefit-desc">
+                        <p>Bonuses based on performance metrics</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-img">
+                        <img src="housing1.png" alt="">
+                    </div>
+                    <div class="benefit-desc">
+                        <p>Relocation packages and housing stipends.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-img">
+                        <img src="work-life-balance.png" alt="">
+                    </div>
+                    <div class="benefit-desc">
+                        <p>Flexible work options (Work from home) and parental leaves.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        &copy; 2024 RewardWave Solutions. All rights reserved.
+    </footer>
+    <script>
+        function redirectToLogin() {
+            window.location.href='login.html';
+        }
+    </script>
+</body>
+</html>

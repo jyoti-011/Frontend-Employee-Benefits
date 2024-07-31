@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="logout.css">
+</head>
+<body>
+    <div class="logout-container">
+        <h1>Logout</h1>
+        <p>Are you sure you want to logout?</p>
+        <div class="button-container">
+            <button onclick="confirmLogout()">Confirm Logout</button>
+            <button onclick="cancelLogout()">Cancel</button>
+        </div>
+    </div>
+    <script>
+        function confirmLogout() {
+            window.location.href = 'login.html'; // Redirect to the login page or homepage after logout
+        }
+
+        function cancelLogout() {
+            window.location.href = 'profile.html'; // Redirect back to profile page
+        }
+    </script>
+</body>
+</html>

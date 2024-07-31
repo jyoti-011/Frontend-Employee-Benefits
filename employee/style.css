@@ -1,0 +1,424 @@
+/* Reset some default styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Background */
+body {
+    background-color: #f4c842;
+}
+
+/* Styling for the header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px; /* Decrease padding to reduce height */
+    background-color: #ffffff;
+    height: 45px;
+    animation: slideDown 0.5s ease-in-out;
+}
+header .company-name {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    transition: color 0.3s, transform 0.3s;
+}
+header .company-name:hover{
+    cursor: pointer;
+    color: #005bb5;
+    transform: scale(1.05);
+}
+header .logo img {
+    height: 50px; /* Decrease logo height if necessary */
+    transition: color 0.3s, transform 0.3s;
+}
+header .logo img:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+header .profile-pic img {
+    height: 50px; /* Decrease profile picture height */
+    width: 50px; /* Adjust width to match the height */
+    border-radius: 50%;
+    object-fit: cover; /* Ensure the image fills the circle */
+    transition: transform 0.3s ease-in-out;
+}
+header .profile-pic img:hover {
+    transform: scale(1.1);
+}
+
+/* Dropdown Menu */
+header .dropdown {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50px; /* Adjust according to your needs */
+    right: 20px;
+    background-color: #d7d6d6;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+header .dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header .dropdown ul li {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+header .dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+header .dropdown ul li a {
+    color: #5d4037; /* Dark brown */
+    text-decoration: none;
+}
+
+header .dropdown ul li a:hover {
+    color: #f57c00; /* Orange */
+}
+/* Styling for the navbar */
+nav {
+    background-color: #2c5c67;
+    /* padding: 10px 0; */
+    animation: slideDown 0.5s ease-in-out;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 18px;
+}
+
+nav a:hover {
+    background-color: #69a7b4;
+    color: #ffffff;
+}
+
+nav a:active, nav a:focus, .tab-link.active {
+    background-color: rgb(0, 123, 255);
+    color: #ffffff;
+    border-radius: 20px ;
+}
+
+/* Styling for the main content */
+.main-content {
+    display: flex;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Styling for the sidebar */
+/* Sidebar */
+.sidebar {
+    width: 170px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    position: sticky;
+    top: 45px;
+    height: calc(100vh - 45px);
+}
+.sidebar .profile-info {
+    text-align: center;
+}
+.sidebar .profile-info img {
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.sidebar .profile-info img:hover {
+    transform: scale(1.1);
+}
+.sidebar .profile-info h2 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+.sidebar .profile-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+.sidebar ul {
+    padding: 20px 0;
+}
+.sidebar li {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    transition: color 0.3s, transform 0.3s;
+}
+.sidebar li:hover {
+    cursor: pointer;
+    color: #005bb5;
+    transform: scale(1.05);
+}
+.sidebar li i {
+    margin-right: 10px;
+}
+.sidebar li img {
+    height: 20px;
+    margin-right: 10px;
+}
+.sidebar li:hover img {
+    filter: brightness(0.7);
+}
+
+/* Make sidebar link text black */
+.sidebar a {
+    color: black;
+    text-decoration: none; /* Remove underline from the links */
+}
+
+.sidebar a:hover {
+    color: #005bb5; /* Maintain the hover color if needed */
+}
+
+/* Styling for the main content area */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Styling for cards */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    transition: border 0.01s ;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+/* Card content styling */
+.card-content {
+    display: flex;
+    align-items: center;
+}
+
+.card-content .text-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.image-content {
+    flex: 0 0 auto;
+}
+
+.image-content img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 15px; /* Rounded corners for the image */
+}
+
+.card-content .image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.achievements {
+    background: #FFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto; /* Center the achievements section */
+}
+
+.achievements h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #FFA726;
+    padding-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.achievements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.achievements ul li {
+    background: #FAFAFA;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s;
+    position: relative;
+}
+
+.achievements ul li:hover {
+    transform: translateY(-5px);
+    background-color: #f0f0f0;
+}
+
+.achievements ul li i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #FFA726;
+}
+
+.achievements ul li .achievement-details {
+    flex: 1;
+}
+
+.achievements ul li .achievement-badge {
+    background-color: #FFA726;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Styling for the benefit programs */
+.benefit-programs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f4c842;
+}
+
+.benefit-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    width: 250px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-card img {
+    width: 120px; /* Increased size */
+    height: 120px; /* Increased size */
+    object-fit: contain;
+    border-radius: 15px; /* Rounded corners for the image */
+    transition: color 0.3s, transform 0.3s;
+}
+.benefit-card img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.benefit-card h3 {
+    font-size: 20px;
+    margin: 15px 0;
+    transition: color 0.3s, transform 0.3s;
+}
+.benefit-card h3:hover {
+    cursor: pointer;
+    /* color: #4CAF50; */
+    transform: scale(1.05);
+}
+.benefit-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 15px 0;
+}
+
+.benefit-card button {
+    background-color: #2c5c67;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 10px;
+    transition: color 0.3s, transform 0.3s;
+}
+.benefit-card button:hover {
+    cursor: pointer;
+    color: #4CAF50;
+    transform: scale(1.05);
+}
+/* .benefit-card button:hover {
+    background-color: #69a7b4;
+    color: #ffffff;
+} */
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

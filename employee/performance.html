@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance</title>
+    <link rel="stylesheet" href="performance-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"> <img src="logo1.png" alt="company logo"></a>
+        </div>
+        <div class="company-name">
+            <h1>RewardWave Solutions</h1>
+        </div>
+        <div class="profile-pic">
+            <img src="profile-pic.png" alt="Profile Picture" id="profilePic">
+            <div class="dropdown" id="dropdownMenu">
+                <ul>
+                    <li><a href="change-password.html">Change Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html" class="tab-link">Dashboard</a></li>
+            <li><a href="benefit.html" class="tab-link">Benefit Programs</a></li>
+            <li><a href="performance.html" class="tab-link active">Performance</a></li>
+            <li><a href="profile.html" class="tab-link">Profile</a></li>
+        </ul>
+    </nav>
+    <div class="profile-container">
+        <div class="header">
+            <img src="user.png" alt="Aster Seawalker" class="profile-pic">
+            <h1>Aster Seawalker</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="details-metrics-container">
+            <div class="performance-metrics">
+                <h2>Employee Details</h2>
+                <ul>
+                <li><strong>Name:</strong> John Doe</li>
+                <li><strong>Position:</strong> Software Engineer</li>
+                <li><strong>Department:</strong> Development</li>
+                <li><strong>Years of Experience:</strong> 5 years</li>
+                <li><strong>Certifications:</strong> 3</li>
+                <li><strong>Attendance:</strong> 96%</li>
+                </ul>
+            </div>
+            <div class="performance-metrics">
+                <h2>Performance Metrics</h2>
+                <ul>
+                    <li>Tasks Completed: 95%</li>
+                    <li>Quality of Work: 90%</li>
+                    <li>Team Collaboration: 85%</li>
+                    <li>Communication: 88%</li>
+                    <li>Projects Completed: 12</li>
+                </ul>
+            </div>
+        </div>
+        <div class="charts">
+            <h2>Performance Charts</h2>
+            <div class="chart-container small-width">
+                <h3>Performance Trend</h3>
+                <canvas id="performanceChart"></canvas>
+            </div>
+            <div class="chart-row">
+                <div class="chart-container half-width">
+                    <h3>Performance Metrics</h3>
+                    <canvas id="metricsChart"></canvas>
+                </div>
+                <div class="chart-container half-width">
+                    <h3>Projects Completed</h3>
+                    <canvas id="projectsChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-row">
+                <div class="chart-container pie-chart">
+                    <h3>Certifications</h3>
+                    <canvas id="certificationsChart"></canvas>
+                </div>
+                <div class="chart-container pie-chart">
+                    <h3>Attendance</h3>
+                    <canvas id="attendanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Performance Trend Chart
+    const ctxPerformance = document.getElementById('performanceChart').getContext('2d');
+    new Chart(ctxPerformance, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Performance',
+                data: [55, 65, 77, 88, 94, 95, 97],
+                backgroundColor: 'rgba(75, 192, 192)',
+                borderColor: 'rgba(75, 92, 62, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Performance Metrics Chart
+    const ctxMetrics = document.getElementById('metricsChart').getContext('2d');
+    new Chart(ctxMetrics, {
+        type: 'bar',
+        data: {
+            labels: ['Tasks Completed', 'Quality of Work', 'Team Collaboration', 'Communication', 'Projects Completed'],
+            datasets: [{
+                label: 'Performance Metrics',
+                data: [95, 90, 85, 88, 12],
+                backgroundColor: [
+                    'rgba(54, 162, 235)',
+                    'rgba(255, 99, 132)',
+                    'rgba(25, 206, 86)',
+                    'rgba(75, 192, 192)',
+                    'rgba(153, 102, 255)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Projects Completed Chart
+    const ctxProjects = document.getElementById('projectsChart').getContext('2d');
+    new Chart(ctxProjects, {
+        type: 'bar',
+        data: {
+            labels: ['Project A', 'Project B', 'Project C', 'Project D', 'Project E', 'Project F'],
+            datasets: [{
+                label: 'Projects Completed',
+                data: [3, 5, 2, 1, 4, 6],
+                backgroundColor: 'rgba(153, 102, 255)',
+                borderColor: 'rgba(153, 102, 255)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Certifications Chart
+    const ctxCertifications = document.getElementById('certificationsChart').getContext('2d');
+    new Chart(ctxCertifications, {
+        type: 'pie',
+        data: {
+            labels: ['Certification 1', 'Certification 2', 'Certification 3'],
+            datasets: [{
+                label: 'Certifications',
+                data: [1, 1, 1],
+                backgroundColor: ['rgba(255, 99, 132)', 'rgba(55, 26, 155 )', 'rgba(75, 192, 192)'],
+                borderColor: ['rgba(255, 99, 132, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                }
+            }
+        }
+    });
+
+    // Attendance Chart
+    const ctxAttendance = document.getElementById('attendanceChart').getContext('2d');
+    new Chart(ctxAttendance, {
+        type: 'doughnut',
+        data: {
+            labels: ['Present', 'Absent'],
+            datasets: [{
+                label: 'Attendance',
+                data: [96, 4],
+                backgroundColor: ['rgba(75, 192, 192)', 'rgba(255, 99, 132)'],
+                borderColor: ['rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                }
+            }
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const profilePic = document.getElementById('profilePic');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    profilePic.addEventListener('click', function() {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide dropdown menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!profilePic.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+    </script>
+</body>
+</html>

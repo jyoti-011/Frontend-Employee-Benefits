@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo1.png" type="image/x-icon">     
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="logo1.png" alt="company logo"></a>
+        </div>
+        <div class="company-name">
+            <h1>RewardWave Solutions</h1>
+        </div>
+        <div class="profile-pic">
+            <img src="profile-pic.png" alt="Profile Picture" id="profilePic">
+            <div class="dropdown" id="dropdownMenu">
+                <ul>
+                    <li><a href="change-password.html">Change Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html" class="tab-link">Dashboard</a></li>
+            <li><a href="benefit.html" class="tab-link">Benefit Programs</a></li>
+            <li><a href="performance.html" class="tab-link">Performance</a></li>
+            <li><a href="profile.html" class="tab-link active">Profile</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="profile-header">
+            <img src="profile1.png" alt="User Photo" class="user-photo">
+            <div class="user-details">
+                <h1>Aster Seawalker</h1>
+                <p>IT Department<br>Associate Software Engineer</p>
+            </div>
+        </section>
+
+        <div class="content">
+            <div class="left-column">
+                <section class="personal-info">
+                    <h2>Personal Information</h2>
+                    <div class="info-row">
+                      <span class="label">E-mail :-</span>
+                      <span class="value">asterseawalker.05@gmail.com</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="label">Phone no. :-</span>
+                      <span class="value">94567383896</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="label">Address :-</span>
+                      <span class="value">123 Main St, Springfield, Bangalore</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="label">Employee ID :-</span>
+                      <span class="value">EMP00123</span>
+                    </div>
+                </section>
+
+                <div class="benefits-program">
+                    <h2>Benefits Program</h2>
+                    <div class="info-row">
+                      <span class="label">Health Insurance:</span>
+                      <span class="value">Enrolled</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="label">Wellness Program:</span>
+                      <span class="value">Enrolled</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="label">Remote Work Options:</span>
+                      <span class="value">Enabled</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="label">Professional Training:</span>
+                      <span class="value">Enrolled</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <section class="settings">
+                <h2 class="settings-heading">Settings</h2>
+                <button onclick="redirectToChangePassword()">Change Password</button>
+                <button onclick="redirectToEditProfile()">Edit Profile</button>
+                <button onclick="redirectToPerformance()">View Performance</button>
+                <button onclick="redirectToLogout()">Log out</button>
+            </section> -->
+        </div>
+    </main>
+    <script>
+        function redirectToPerformance(){
+            window.location.href = "performance.html";
+        }
+        function redirectToChangePassword(){
+            window.location.href = "change-password.html";
+        }
+        function redirectToEditProfile(){
+            window.location.href = "edit-profile.html";
+        }
+        function redirectToLogout(){
+            window.location.href = "logout.html";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const profilePic = document.getElementById('profilePic');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    profilePic.addEventListener('click', function() {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide dropdown menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!profilePic.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+    </script>
+</body>
+</html>

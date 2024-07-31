@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Detail Page</title>
+    <link rel="stylesheet" href="housing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"> <img src="logo1.png" alt="company logo"></a>
+        </div>
+        <div class="company-name">
+            <h1>RewardWave Solutions</h1>
+        </div>
+        <div class="profile-pic">
+            <img src="profile-pic.png" alt="Profile Picture" id="profilePic">
+            <div class="dropdown" id="dropdownMenu">
+                <ul>
+                    <li><a href="change-password.html">Change Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>  
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="benefit.html" class="active">Benefit Programs</a></li>
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+    <div class="breadcrumb">
+        <a href="dashboard.html">DASHBOARD</a> <i class="fa-solid fa-greater-than"></i> <a href="benefit.html">BENEFIT PROGRAMS</a> <i class="fa-solid fa-greater-than"></i> <a href="housing.html">HOUSING ASSISTANCE</a> <i class="fa-solid fa-greater-than"></i> <a href="#">DETAILS</a>
+    </div>
+    <div class="content">
+        <div class="details-container">
+            <h1>Housing Assistance</h1>
+            <div class="images">
+                <img src="housing1.png" alt="Housing Assistance Detail Image 1" class="detail-image">
+                <!-- <img src="house2.png" alt="Housing Assistance Detail Image 2" class="detail-image"> -->
+            </div>
+            <div class="specifications">
+                <h2>Specifications</h2>
+                <p>Assistance Type: Rent, Mortgage, Down Payment</p>
+                <p>Eligibility: Employees with 1+ years of service</p>
+                <p>Amount: Up to 50% of monthly rent/mortgage</p>
+                <p>Duration: Up to 24 months</p>
+                <p>Application Process: Online application with required documents</p>
+                <p>Repayment Terms: Flexible repayment options</p>
+            </div>
+            <div class="types">
+                <h2>Types of Assistance</h2>
+                <p>Rental Assistance: Helps cover monthly rent payments</p>
+                <p>Mortgage Assistance: Helps cover monthly mortgage payments</p>
+                <p>Down Payment Assistance: Helps with the down payment for a new home</p>
+            </div>
+            <div class="benefits">
+                <h2>Benefits of Housing Assistance</h2>
+                <p>Financial Support: Reduces financial burden on employees</p>
+                <p>Stability: Provides stability and security</p>
+                <p>Flexibility: Offers flexible repayment terms</p>
+                <p>Peace of Mind: Ensures employees have a safe and comfortable living environment</p>
+            </div>
+            <div class="how-to">
+                <h2>How to Apply for Housing Assistance</h2>
+                <p>Fill in Your Details: Complete the online application form</p>
+                <p>Submit Required Documents: Upload necessary documents such as proof of income and lease agreement</p>
+                <p>Review and Approval: Application will be reviewed and approved by the HR department</p>
+                <p>Receive Assistance: Start receiving housing assistance upon approval</p>
+            </div>
+            <div class="providers">
+                <h2>Housing Assistance Providers</h2>
+                <p>Company Housing Fund: Internal fund set up to provide housing assistance to employees</p>
+                <p>Local Government Programs: Collaboration with local government housing assistance programs</p>
+                <p>Non-Profit Organizations: Partnerships with non-profit organizations offering housing assistance</p>
+            </div>
+            <div class="riders">
+                <h2>Housing Assistance Riders</h2>
+                <p>Emergency Assistance Rider: Additional support in case of emergencies</p>
+                <p>Relocation Assistance Rider: Helps cover relocation expenses</p>
+            </div>
+            <div class="tips">
+                <h2>Housing Assistance Tips</h2>
+                <p>Apply Early: Submit your application as early as possible</p>
+                <p>Provide Accurate Information: Ensure all information and documents are accurate</p>
+                <p>Understand Terms: Read and understand the terms and conditions of the assistance</p>
+                <p>Plan Ahead: Plan your finances to make the most of the assistance provided</p>
+            </div>
+            <button class="apply-now" onclick="redirectToRequest()">APPLY NOW</button>
+        </div>
+    </div>
+    <script>
+        function redirectToRequest() {
+            window.location.href = "request-housing.html";
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+    const profilePic = document.getElementById('profilePic');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    profilePic.addEventListener('click', function() {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide dropdown menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!profilePic.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+    </script>
+</body>
+</html>

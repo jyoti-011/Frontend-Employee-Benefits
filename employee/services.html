@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common-styles.css">
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+    <style>
+        .services-main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+        .service-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .service-card-text, .service-card-img {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .service-card-img {
+            background-color: #f9f9f9;
+        }
+        .service-card-text {
+            background-color: #fff;
+            font-family: "Quicksand", sans-serif;
+            font-weight: 100px;
+            font-style: normal;
+        }
+        .service-card-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .service-card-img:hover img {
+            transform: scale(1.1);
+        }
+        .service-card-text:hover {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .service-card-text h2 {
+            margin-top: 0;
+        }
+        .services-main-content h2{
+            font-family: "Quicksand", sans-serif;
+            font-weight: 100px;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="logo1.png" alt="Company Logo"></a>
+        <div class="company-name">
+            <h1>RewardWave Solutions</h1>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="about.html" >About Us</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="services-main-content">
+        <div class="service-card service-card1">
+            <div class="service-card-text">
+                <h2>IT Consulting</h2>
+                <p>Helping businesses align IT with their goals. Evaluating current systems and recommending improvements. Managing IT projects from inception to completion. Guiding businesses through digital changes.</p>
+            </div>
+            <div class="service-card-img">
+                <img src="it-consult.jpeg" alt="IT Consultation">
+            </div>
+        </div>
+        <div class="service-card service-card2">
+            <div class="service-card-img">
+                <img src="cloud-ser.jpeg" alt="Cloud Services">
+            </div>
+            <div class="service-card-text">
+                <h2>Cloud Services</h2>
+                <p>Take your business to the next level with our scalable cloud-based server solutions, secure cloud storage options, and seamless cloud migration services. Our expert team will help you move your data and applications to the cloud with minimal downtime. Once you're there, our managed cloud services will oversee your cloud infrastructure and operations, ensuring peak performance and security. With our comprehensive cloud solutions, you'll enjoy increased flexibility, reduced costs, and enhanced collaboration.</p>
+            </div>
+        </div>
+        <div class="service-card service-card3">
+            <div class="service-card-text">
+                <h2>Software Development</h2>
+                <p>Transform your business with our custom software development services, creating tailored solutions that meet your specific needs. We also specialize in mobile app development for iOS, Android, and cross-platform, as well as web development for websites and web applications. Additionally, our Software as a Service (SaaS) offerings provide subscription-based access to software hosted in the cloud, streamlining your operations and reducing costs. With our expertise, you'll gain efficient, scalable, and secure solutions that drive success.</p>
+            </div>
+            <div class="service-card-img">
+                <img src="sw-dev.webp" alt="Software Development">
+            </div>
+        </div>
+        <div class="service-card service-card4">
+            <div class="service-card-img">
+                <img src="cyber-sec.jpeg" alt="Cyber Security">
+            </div>
+            <div class="service-card-text">
+                <h2>Cyber Security</h2>
+                <p>Protect your business from ever-evolving cyber threats with our comprehensive security services. We'll identify vulnerabilities and risks through thorough threat assessments, safeguard your network infrastructure with robust security measures, and ensure data privacy and security through advanced encryption methods. In the event of a security breach, our incident response team will quickly address and manage the situation to minimize damage. With our expertise, you'll enjoy peace of mind knowing your business is secure and resilient.</p>
+            </div>
+        </div>
+        <div class="service-card service-card5">
+            <div class="service-card-text">
+                <h2>IT Support and Maintenance</h2>
+                <p>Experience seamless technical operations with our reliable IT support services. Our help desk support team is always available to assist with technical issues, while our system maintenance ensures regular updates and bug fixes to prevent downtime. We also provide expert network administration to manage and maintain your network systems, ensuring optimal performance. Additionally, our backup and disaster recovery solutions guarantee data recovery in case of failure, giving you peace of mind and business continuity.</p>
+            </div>
+            <div class="service-card-img">
+                <img src="it-support.jpeg" alt="Support and Maintenance">
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        &copy; 2024 BITLOOM. All rights reserved.
+    </footer>
+</body>
+</html>

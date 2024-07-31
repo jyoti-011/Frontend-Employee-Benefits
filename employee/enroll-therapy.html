@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy and Counseling Enrollment Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="enroll-therapy.css">
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"> <img src="logo1.png" alt="company logo"></a>
+        </div>
+        <div class="company-name">
+            <h1>RewardWave Solutions</h1>
+        </div>
+        <div class="profile-pic">
+            <img src="profile-pic.png" alt="Profile Picture" id="profilePic">
+            <div class="dropdown" id="dropdownMenu">
+                <ul>
+                    <li><a href="change-password.html">Change Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="benefit.html" class="active">Benefit Programs</a></li>
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+    <div class="breadcrumb">
+        <a href="dashboard.html">DASHBOARD</a> <i class="fa-solid fa-greater-than"></i><a href="benefit.html">BENEFIT PROGRAMS</a> <i class="fa-solid fa-greater-than"></i> <a href="therapy.html">THERAPY AND COUNSELING</a> <i class="fa-solid fa-greater-than"></i> <a href="#">ENROLL</a>
+    </div>
+    <div class="content">
+        <form class="enrollment-form" onsubmit="redirectToEnrollSuccess(event)">
+            <h1>THERAPY AND COUNSELING ENROLLMENT FORM</h1>
+            <section>
+                <h2>SECTION 1: PERSONAL INFORMATION</h2>
+                <label for="emp-id">EMPLOYEE ID:</label>
+                <input type="number" id="emp-id" name="emp-id" required>
+                <label for="name">NAME:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="dob">D.O.B. (Date of Birth):</label>
+                <input type="date" id="dob" name="dob" required>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </section>
+            <section>
+                <h2>SECTION 2: SESSION PREFERENCES</h2>
+                <label>Types of Sessions: (Check one)</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="individual" name="session-type" value="individual" required> Individual</label>
+                    <label><input type="radio" id="group" name="session-type" value="group"> Group</label>
+                    <label><input type="radio" id="family" name="session-type" value="family"> Family</label>
+                </div>
+                <label for="start-date">Preferred Start Date:</label>
+                <input type="date" id="start-date" name="start-date" required>
+                <label>Preferred Session Time:</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="morning" name="session-time" value="morning" required> Morning</label>
+                    <label><input type="radio" id="afternoon" name="session-time" value="afternoon"> Afternoon</label>
+                    <label><input type="radio" id="evening" name="session-time" value="evening"> Evening</label>
+                </div>
+            </section>
+            <section>
+                <h2>SECTION 3: ADDITIONAL INFORMATION</h2>
+                <label for="therapy-goals">Therapy Goals:</label>
+                <textarea id="therapy-goals" name="therapy-goals" rows="4" required></textarea>
+                <label for="medical-conditions">Any Medical Conditions?: (Yes/No)</label>
+                <input type="text" id="medical-conditions" name="medical-conditions" required>
+                <div id="medical-conditions-details">
+                    <label>If yes, please provide details:</label>
+                    <textarea id="medical-details" name="medical-details" rows="4"></textarea>
+                </div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="terms" name="terms" required> I agree to the terms and conditions of the therapy and counseling program.</label>
+                    <label><input type="checkbox" id="privacy" name="privacy" required> I have read and understood the privacy policy.</label>
+                </div>
+            </section>
+            <button type="submit" class="enroll-button">ENROLL</button>
+        </form>
+    </div>
+    <script>
+        function redirectToEnrollSuccess(event) {
+            event.preventDefault();
+
+            // Check if the required checkboxes are checked
+            const termsChecked = document.getElementById('terms').checked;
+            const privacyChecked = document.getElementById('privacy').checked;
+
+            // Check if the form is valid
+            const form = document.querySelector('.enrollment-form');
+            if (form.checkValidity() && termsChecked && privacyChecked) {
+                window.location.href = "enroll-success.html";
+            } else {
+                alert('Please fill in all required fields and check all required checkboxes.');
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+    const profilePic = document.getElementById('profilePic');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    profilePic.addEventListener('click', function() {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide dropdown menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!profilePic.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+        
+    </script>
+</body>
+</html>
+
+

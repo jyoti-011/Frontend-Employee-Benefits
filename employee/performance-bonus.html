@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Bonus Detail Page</title>
+    <link rel="stylesheet" href="performance-bonus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"> <img src="logo1.png" alt="company logo"></a>
+        </div>
+        <div class="company-name">
+            <h1>RewardWave Solutions</h1>
+        </div>
+        <div class="profile-pic">
+            <img src="profile-pic.png" alt="Profile Picture" id="profilePic">
+            <div class="dropdown" id="dropdownMenu">
+                <ul>
+                    <li><a href="change-password.html">Change Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="benefit.html" class="active">Benefit Programs</a></li>
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+    <div class="breadcrumb">
+        <a href="dashboard.html">DASHBOARD</a> <i class="fa-solid fa-greater-than"></i> <a href="benefit.html">BENEFIT PROGRAMS</a> <i class="fa-solid fa-greater-than"></i> <a href="performance-bonus.html">PERFORMANCE BONUS</a> <i class="fa-solid fa-greater-than"></i> <a href="#">DETAILS</a>
+    </div>
+    <div class="content">
+        <div class="details-container">
+            <h1>Performance Bonus</h1>
+            <div class="images">
+                <img src="bonus.png" alt="Performance Bonus Detail Image 1" class="detail-image">
+                <!-- <img src="bonus2.png" alt="Performance Bonus Detail Image 2" class="detail-image"> -->
+            </div>
+            <div class="specifications">
+                <h2>Specifications</h2>
+                <p>Bonus Type: Annual, Quarterly, Project-based</p>
+                <p>Eligibility: Based on performance metrics and targets</p>
+                <p>Payout Frequency: Annually, Quarterly, After Project Completion</p>
+                <p>Bonus Amount: Variable based on performance</p>
+                <p>Assessment Criteria: KPIs, OKRs, Peer Reviews</p>
+                <p>Performance Period: Last performance review cycle</p>
+                <p>Approval Process: Requires manager and HR approval</p>
+            </div>
+            <div class="types">
+                <h2>Types of Bonuses</h2>
+                <p>Annual Performance Bonus: Based on yearly performance</p>
+                <p>Quarterly Performance Bonus: Based on quarterly performance</p>
+                <p>Project Completion Bonus: Based on successful project completion</p>
+            </div>
+            <div class="benefits">
+                <h2>Benefits of Performance Bonuses</h2>
+                <p>Increased Motivation: Encourages higher performance levels</p>
+                <p>Reward for Hard Work: Acknowledges and rewards employee efforts</p>
+                <p>Retention Tool: Helps retain top performers</p>
+                <p>Competitive Advantage: Attracts talent looking for performance-based rewards</p>
+            </div>
+            <div class="how-to">
+                <h2>How to Qualify for a Performance Bonus</h2>
+                <p>Meet Performance Targets: Achieve or exceed set targets</p>
+                <p>Maintain Consistent Performance: Show consistent performance throughout the period</p>
+                <p>Peer and Manager Reviews: Obtain positive feedback from peers and managers</p>
+                <p>Submit Self-Assessment: Provide a self-assessment highlighting your achievements</p>
+            </div>
+            <div class="providers">
+                <h2>Bonus Providers</h2>
+                <p>Company HR: Manages and processes bonuses</p>
+                <p>Performance Management System: Tracks and assesses performance</p>
+                <p>Department Heads: Approve and recommend bonuses</p>
+            </div>
+            <div class="riders">
+                <h2>Bonus Riders</h2>
+                <p>Exceptional Performance Rider: Additional bonus for exceptional performance</p>
+                <p>Team Performance Rider: Bonus for outstanding team performance</p>
+            </div>
+            <div class="tips">
+                <h2>Tips to Maximize Your Bonus</h2>
+                <p>Set Clear Goals: Have clear, measurable goals</p>
+                <p>Seek Feedback: Regularly seek feedback to improve</p>
+                <p>Document Achievements: Keep a record of your achievements</p>
+                <p>Stay Engaged: Stay engaged with your work and team</p>
+            </div>
+            <button class="enroll-now" onclick="redirectToEnroll()">ENROLL NOW</button>
+        </div>
+    </div>
+    <script>
+        function redirectToEnroll() {
+            window.location.href = "enroll-bonus.html";
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+    const profilePic = document.getElementById('profilePic');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    profilePic.addEventListener('click', function() {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide dropdown menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!profilePic.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+    </script>
+</body>
+</html>
