@@ -49,8 +49,9 @@
     <header>
         <a href="index.html"><img src="logo1.png" alt="Company Logo"></a>
         <div class="company-name">
-            <h1>RewardWave Solutions</h1>
+            <h1 style= "font-size: 32px">RewardWave Solutions</h1>
         </div>
+        <button class="login" onclick="redirectToLogin()">LOGIN</button>
     </header>
     <nav class="main-nav">
         <ul>
@@ -83,5 +84,10 @@
     <footer class="footer">
         &copy; 2024 RewardWave Solutions. All rights reserved.
     </footer>
+    <script>
+        function redirectToLogin() {
+            window.location.href='login.html';
+        }
+    </script>
 </body>
 </html>

@@ -42,9 +42,9 @@ header .logo img:hover {
     transform: scale(1.05);
 }
 header .profile-pic img {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+    height: 70px; /* Decrease profile picture height */
+    width: 70px; /* Adjust width to match the height */
+    /* border-radius: 50%; */
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
 }

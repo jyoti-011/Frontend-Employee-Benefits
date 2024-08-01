@@ -42,9 +42,9 @@ header .logo img:hover{
     transform: scale(1.05);
 }
 header .profile-pic img {
-    height: 50px; /* Decrease profile picture height */
-    width: 50px; /* Adjust width to match the height */
-    border-radius: 50%;
+    height: 70px; /* Decrease profile picture height */
+    width: 70px; /* Adjust width to match the height */
+    /* border-radius: 50%; */
     object-fit: cover; /* Ensure the image fills the circle */
     transition: transform 0.3s ease-in-out;
 }
@@ -140,14 +140,16 @@ nav a:active, nav a:focus, .tab-link.active {
     padding: 20px;
     border-right: 1px solid #ddd;
     position: sticky;
-    top: 45px;
-    height: calc(100vh - 45px);
+    top: 60px;
+    height: calc(100vh - 60px);
+    animation: slideInLeft 0.5s ease-in-out;
 }
 .sidebar .profile-info {
     text-align: center;
 }
 .sidebar .profile-info img {
-    height: 80px;
+    height: 125px;
+    width: 125px;
     border-radius: 50%;
     margin-bottom: 10px;
     transition: transform 0.3s ease-in-out;
