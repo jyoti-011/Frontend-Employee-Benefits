@@ -31,7 +31,7 @@ header .company-name {
 }
 header .company-name:hover{
     cursor: pointer;
-    color: #005bb5;
+    color: black;
     transform: scale(1.05);
 }
 header .logo img {
