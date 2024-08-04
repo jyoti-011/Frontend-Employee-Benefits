@@ -11,37 +11,127 @@
     <link rel="stylesheet" href="common-styles.css">
     <link rel="icon" href="logo1.png" type="image/x-icon">
     <style>
-        .contact-cards {
+        .main-content {
+            padding: 70px 20px;
+            max-width: 1000px;
+            margin: 40px auto;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form {
+            flex: 1;
+            max-width: 55%;
+            padding-right: 40px;
+        }
+
+        .contact-form h2 {
+            font-size: 36px;
+            color: #2c5c67;
+            margin-bottom: 30px;
+            font-weight: bold;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-wrap: wrap;
             gap: 20px;
         }
-        .contact-card1, .contact-card2 {
-            width: 250px; /* Ensure both cards have the same width */
-            padding: 20px;
-            margin: 40px auto;
-            background-color: white;
-            border-radius: 2px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center the content horizontally */
-        }
-        .contact-card1:hover, .contact-card2:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 10; /* Bring to front */
-        }
-        .contact-card1 h2, .contact-card2 h2 {
-            font-family: Barlow Semi Condensed, sans-serif;
-            font-weight: 200;
+
+        .contact-form input, .contact-form select, .contact-form textarea {
             width: 100%;
-            text-align: center; /* Center the heading text */
-            margin-bottom: 20px; /* Add some space below the heading */
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            outline: none;
+            transition: border 0.3s ease;
+            animation: fadeInUp 1s ease-in-out;
         }
-        .contact-card1 p, .contact-card2 p {
-            margin: 5px 0;
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #007bff;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            padding: 15px 30px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .contact-form button:hover {
+            background-color: darkgreen;
+        }
+
+        .contact-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .contact-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .contact-info p {
+            margin: 0 15px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .contact-info p img {
+            margin-right: 8px;
+            vertical-align: middle;
+            width: 24px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            color: black;
+            margin-top: 40px;
+            animation: fadeInUp 2.5s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -49,7 +139,7 @@
     <header>
         <a href="index.html"><img src="logo1.png" alt="Company Logo"></a>
         <div class="company-name">
-            <h1 style= "font-size: 32px">RewardWave Solutions</h1>
+            <h1>RewardWave Solutions</h1>
         </div>
         <button class="login" onclick="redirectToLogin()">LOGIN</button>
     </header>
@@ -62,26 +152,33 @@
         </ul>
     </nav>
     <div class="main-content">
-        <h1 style="font-family: Barlow Semi Condensed, sans-serif; font-weight: 400;">We'd love to hear from you</h1>
-        <div class="contact-cards">
-            <div class="contact-card1">
-                <h2>
-                    <img src="contact-mail.png" alt="Contact" style="height: 25px; vertical-align: middle; margin-right: 10px;">
-                    Get in touch
-                </h2>
-                <p>Email: info@yourcompany.com</p>
-                <p>Phone: +123-456-7890</p>
-            </div>
-            <div class="contact-card2">
-                <h2>
-                    <img src="pin.png" alt="Location" style="height: 25px; vertical-align: middle; margin-right: 10px;">
-                    Meet Us
-                </h2>
-                <p>Address: 123 Main Street, Anytown, USA</p>
-            </div>
+        <div class="contact-form">
+            <h2>Connect with Our Team of Experts</h2>
+            <form>
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="text" name="location" placeholder="Location" required>
+                <select name="expertise">
+                    <option value="">What Expertise You're Interested In</option>
+                    <option value="consulting">Consulting</option>
+                    <option value="development">Development</option>
+                    <option value="design">Design</option>
+                </select>
+                <textarea name="message" placeholder="Tell Us About Your Project" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="contact-image">
+            <img src="contact.png" alt="Contact Us Illustration">
         </div>
     </div>
-    <footer class="footer">
+    <div class="contact-info">
+        <p><img src="contact-mail.png" alt="Email"> lja@lja.com</p>
+        <p><img src="pin.png" alt="Location"> 123 Main Street, Anytown, USA</p>
+        <p><img src="phone1.png" alt="Phone"> +123-456-7890</p>
+    </div>
+    <footer>
         &copy; 2024 RewardWave Solutions. All rights reserved.
     </footer>
     <script>
